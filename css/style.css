@@ -573,7 +573,7 @@ h6 {
     padding: 10px;
     font-family: Athelas, STHeiti, Microsoft Yahei, serif;
     border-radius: 5px;
-    background: rgba(222, 232, 206, 0.6);
+    background: rgba(240, 247, 239, 0.6);
     box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.125);
     word-wrap: break-word;
     box-sizing: border-box; }
@@ -648,15 +648,15 @@ h6 {
     border-spacing: 0;
     box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.125); }
     .post .post-content > table thead {
-      background: #dee8ce; }
+      background: #f0f7ef; }
     .post .post-content > table th, .post .post-content > table td {
       padding: 5px 15px;
-      border: 1px double #d7e3c4; }
+      border: 1px double #e6f2e5; }
   .post .post-content code, .post .post-content pre {
     padding: 7px;
     font-size: 13px;
     font-family: Consolas, Monaco, Menlo, Consolas, monospace;
-    background: #dee8ce; }
+    background: #f0f7ef; }
   .post .post-content code {
     padding: 3px 5px;
     border-radius: 4px;
@@ -678,7 +678,7 @@ h6 {
         font-size: 13px;
         font-weight: bold;
         color: #b1b1b1;
-        background: #d7e3c4;
+        background: #e6f2e5;
         content: 'Code'; }
     .post .post-content .highlight.html > table::after {
       content: "HTML"; }
@@ -814,7 +814,7 @@ h6 {
       font-size: 13px;
       font-weight: bold;
       color: #b1b1b1;
-      background: #d7e3c4;
+      background: #e6f2e5;
       z-index: 20;
       overflow-x: hidden;
       box-sizing: border-box; }
@@ -1353,16 +1353,16 @@ h6 {
       animation-name: outlast; }
 
 .mobile-menu {
-  background-color: rgba(222, 232, 206, 0.5); }
+  background-color: rgba(240, 247, 239, 0.5); }
   .mobile-menu .mobile-menu-list {
     position: relative;
     list-style: none;
     margin-top: 50px;
     padding: 0;
-    border-top: 1px solid #dee8ce; }
+    border-top: 1px solid #f0f7ef; }
     .mobile-menu .mobile-menu-list .mobile-menu-item {
       padding: 10px 30px;
-      border-bottom: 1px solid #dee8ce; }
+      border-bottom: 1px solid #f0f7ef; }
     .mobile-menu .mobile-menu-list a {
       font-size: 18px;
       font-family: Athelas, STHeiti, Microsoft Yahei, serif; }

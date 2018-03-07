@@ -17,7 +17,7 @@
 
 
 
-  <meta name="description" content="BlackBirch's blog | BlackBirch"/>
+  <meta name="description" content="react-native 总结"/>
 
 
 
@@ -40,7 +40,7 @@
 
 
 
-<link rel="canonical" href="http://BlackBirch.github.io/"/>
+<link rel="canonical" href="http://BlackBirch.github.io/2018/03/08/react-native/"/>
 
 
 <link rel="stylesheet" type="text/css" href="/css/style.css?v=2.6.0" />
@@ -77,7 +77,7 @@
 
 
 
-    <title> 否极.泰来 </title>
+    <title> react-native 总结 - 否极.泰来 </title>
   </head>
 
   <body><div id="mobile-navbar" class="mobile-navbar">
@@ -152,14 +152,12 @@
         <div class="content-wrapper">
           <div id="content" class="content">
             
-  <section id="posts" class="posts">
-    
-      
+  
   <article class="post">
     <header class="post-header">
       <h1 class="post-title">
         
-          <a class="post-link" href="/2018/03/08/react-native/">react-native 总结</a>
+          react-native 总结
         
       </h1>
 
@@ -177,11 +175,7 @@
 
     <div class="post-content">
       
-        
-        
-
-        
-          <p>##template<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&apos;use strict&apos;;</span><br><span class="line"></span><br><span class="line">import React,&#123; Component &#125; from &apos;react&apos;;</span><br><span class="line">import &#123; StyleSheet,Text,View &#125; from &apos;react-native&apos;;//react-native的标签组件以及样式</span><br><span class="line">import //额外的组件</span><br><span class="line"></span><br><span class="line">export default class extends Component&#123;</span><br><span class="line">  constructor()&#123; //构造函数，在创建组件时调用一次</span><br><span class="line">      super();</span><br><span class="line">      this.state=&#123;</span><br><span class="line">        //初始化组件属性</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  componentWillMount()&#123;</span><br><span class="line">    //在组件加载之前调用一次。如果在这个函数里面调用setState，本次的render函数可以看到更新后的state，并且只渲染一次。</span><br><span class="line">  &#125;</span><br><span class="line">  componentDidMount()&#123;</span><br><span class="line">    //在组件加载之后调用一次。</span><br><span class="line">  &#125;</span><br><span class="line">  componentWillReceiveProps(nextProps)&#123;</span><br><span class="line">    //props是父组件传递给子组件的。父组件发生render的时候子组件就会调用componentWillReceiveProps（不管props有没有更新，也不管父子组件之间有没有数据交换）。</span><br><span class="line">  &#125;</span><br><span class="line">  shouldComponentUpdate()&#123;</span><br><span class="line">    //组件加载之后，每次调用setState后都会调用shouldComponentUpdate判断是否需要重新渲染组件。默认返回true，需要重新render。在比较复杂的应用里，有一些数据的改变并不影响界面展示，可以在这里做判断，优化渲染效率。</span><br><span class="line">  &#125;</span><br><span class="line">  componentWillUpdate()&#123;</span><br><span class="line">    //shouldComponentUpdate返回true或者调用forceUpdate之后，componentWillUpdate会被调用。 </span><br><span class="line">  &#125;</span><br><span class="line">  componentDidUpdate()&#123;</span><br><span class="line">    //除了首次render之后调用componentDidMount，其它render结束之后都是调用componentDidUpdate。</span><br><span class="line">  &#125;</span><br><span class="line">  render() &#123;</span><br><span class="line">    return(</span><br><span class="line">      &lt;View&gt;&lt;/View&gt;</span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line">  componentWillUnmount()&#123;</span><br><span class="line">    //组件被卸载时调用。一般在componentDidMount里面注册的事件需要在这里删除。</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const styles = StyleSheet.create(&#123; //样式以驼峰式写法定义</span><br><span class="line"></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+        <p>##template<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&apos;use strict&apos;;</span><br><span class="line"></span><br><span class="line">import React,&#123; Component &#125; from &apos;react&apos;;</span><br><span class="line">import &#123; StyleSheet,Text,View &#125; from &apos;react-native&apos;;//react-native的标签组件以及样式</span><br><span class="line">import //额外的组件</span><br><span class="line"></span><br><span class="line">export default class extends Component&#123;</span><br><span class="line">  constructor()&#123; //构造函数，在创建组件时调用一次</span><br><span class="line">      super();</span><br><span class="line">      this.state=&#123;</span><br><span class="line">        //初始化组件属性</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  componentWillMount()&#123;</span><br><span class="line">    //在组件加载之前调用一次。如果在这个函数里面调用setState，本次的render函数可以看到更新后的state，并且只渲染一次。</span><br><span class="line">  &#125;</span><br><span class="line">  componentDidMount()&#123;</span><br><span class="line">    //在组件加载之后调用一次。</span><br><span class="line">  &#125;</span><br><span class="line">  componentWillReceiveProps(nextProps)&#123;</span><br><span class="line">    //props是父组件传递给子组件的。父组件发生render的时候子组件就会调用componentWillReceiveProps（不管props有没有更新，也不管父子组件之间有没有数据交换）。</span><br><span class="line">  &#125;</span><br><span class="line">  shouldComponentUpdate()&#123;</span><br><span class="line">    //组件加载之后，每次调用setState后都会调用shouldComponentUpdate判断是否需要重新渲染组件。默认返回true，需要重新render。在比较复杂的应用里，有一些数据的改变并不影响界面展示，可以在这里做判断，优化渲染效率。</span><br><span class="line">  &#125;</span><br><span class="line">  componentWillUpdate()&#123;</span><br><span class="line">    //shouldComponentUpdate返回true或者调用forceUpdate之后，componentWillUpdate会被调用。 </span><br><span class="line">  &#125;</span><br><span class="line">  componentDidUpdate()&#123;</span><br><span class="line">    //除了首次render之后调用componentDidMount，其它render结束之后都是调用componentDidUpdate。</span><br><span class="line">  &#125;</span><br><span class="line">  render() &#123;</span><br><span class="line">    return(</span><br><span class="line">      &lt;View&gt;&lt;/View&gt;</span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line">  componentWillUnmount()&#123;</span><br><span class="line">    //组件被卸载时调用。一般在componentDidMount里面注册的事件需要在这里删除。</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const styles = StyleSheet.create(&#123; //样式以驼峰式写法定义</span><br><span class="line"></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
 <p>##生命周期<br><img src="http://upload-images.jianshu.io/upload_images/1814354-4bf62e54553a32b7.png?imageMogr2/auto-orient/strip%7CimageView2/2" alt="react-生命周期"></p>
 <p>##常用外部组件</p>
 <blockquote>
@@ -216,75 +210,63 @@
 <p>##github上比较好的demo学习<br><a href="https://github.com/fangwei716/30-days-of-react-native" target="_blank" rel="noopener">30-days-of-react-native</a></p>
 <p>##学习文档<br>详见<a href="https://reactnative.cn/docs/0.51/getting-started.html" target="_blank" rel="noopener">react-native</a>官网。</p>
 
-        
       
     </div>
 
     
-
-    
-
-  </article>
-
-    
       
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2018/02/27/hello-world/">前端 - 3m热度的我，3y后从0出发。</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2018-02-27
-        </span>
-        
-        
-      </div>
-    </header>
-
-    
-    
-
-    <div class="post-content">
       
-        
-        
 
-        
-          <p>接触网站开发也有4个年头了，从大一下半年开始的网站开发工作室到如今工作了一年多的我，[ 我把实习也加上去了，其实我是17年毕业的。] 而接触前端也有3年了吧，好吧，不想当年了，从基础的学习到项目的实战经验，我发现了一个重大的问题，写过的代码都不记得是自己写的 T T，所以决定了开通这个博客！ 我也有过写博客的，在博客园！ 不过3分热度的我真的没有坚持下来。。。为什么呢？因为懒。 而且博客园的风格都不喜欢。。自然而然。。。呵呵呵。。成了口水博客了。。尴尬。。<br>回到主题来：<br>接触了2年的node，当然自然而然的用起了hexo，毕竟。。jekyll需要pathon和哔哔哔的环境，而我的电脑里。。好吧，懒得装，有什么环境用什么～ </p>
-<p>首先怎么建博客呢？<br>参考<br><a href="http://ibruce.info/2013/11/22/hexo-your-blog/" target="_blank" rel="noopener">http://ibruce.info/2013/11/22/hexo-your-blog/</a></p>
-<p>如何写技术博客呢？</p>
-<ol>
-<li>实战类：<br> 写作思路 背景-&gt;排查-&gt;解决-&gt;防止<br> 首先描述问题背景，what？where？<br> 排查过程 why？ because<br> 解决 how？<br> 防止 avoid </li>
-<li>入门类：<br> 写作思路 技术背景-&gt;基础环境-&gt;demo</li>
-<li>小结：<br> 概括文章概要（设计）-&gt; 根据概要写文章（编码） -&gt; 检查文章错别字、条例（猜测）-&gt; 调节文章结构（重构）-&gt; 发布文章（上线or投产）</li>
-</ol>
-
-        
+  <div class="post-copyright">
+    <p class="copyright-item">
+      <span>原文作者: </span>
+      <a href="http://BlackBirch.github.io">black birch</a>
+    </p>
+    <p class="copyright-item">
+      <span>原文链接: </span>
+      <a href="http://BlackBirch.github.io/2018/03/08/react-native/">http://BlackBirch.github.io/2018/03/08/react-native/</a>
+    </p>
+    <p class="copyright-item">
+      <span>许可协议: </span>
       
-    </div>
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
 
+
+
+      
+      
     
 
     
-
-  </article>
-
+      <footer class="post-footer">
+        
+        
+        
+  <nav class="post-nav">
     
-  </section>
-
-  
-  <nav class="pagination">
     
+      <a class="next" href="/2018/02/27/hello-world/">
+        <span class="next-text nav-default">前端 - 3m热度的我，3y后从0出发。</span>
+        <span class="prev-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
     
   </nav>
+
+      </footer>
+    
+
+  </article>
 
 
           </div>
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
       </main>
@@ -366,6 +348,11 @@
     </div>
 
     
+  
+  
+
+  
+
 
 
     
