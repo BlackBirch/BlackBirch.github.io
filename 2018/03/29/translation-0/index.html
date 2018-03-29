@@ -17,7 +17,7 @@
 
 
 
-  <meta name="description" content="BlackBirch's blog | BlackBirch"/>
+  <meta name="description" content="web英语读物【个人翻译】 - 0"/>
 
 
 
@@ -40,7 +40,7 @@
 
 
 
-<link rel="canonical" href="http://BlackBirch.github.io/"/>
+<link rel="canonical" href="http://BlackBirch.github.io/2018/03/29/translation-0/"/>
 
 
 <link rel="stylesheet" type="text/css" href="/css/style.css?v=2.6.0" />
@@ -77,7 +77,7 @@
 
 
 
-    <title> 否极.泰来 </title>
+    <title> web英语读物【个人翻译】 - 0 - 否极.泰来 </title>
   </head>
 
   <body><div id="mobile-navbar" class="mobile-navbar">
@@ -152,14 +152,12 @@
         <div class="content-wrapper">
           <div id="content" class="content">
             
-  <section id="posts" class="posts">
-    
-      
+  
   <article class="post">
     <header class="post-header">
       <h1 class="post-title">
         
-          <a class="post-link" href="/2018/03/29/translation-0/">web英语读物【个人翻译】 - 0</a>
+          web英语读物【个人翻译】 - 0
         
       </h1>
 
@@ -177,11 +175,7 @@
 
     <div class="post-content">
       
-        
-        
-
-        
-          <p>这是我的第一篇英语读物翻译，目的是为了学英语+学技术的，翻译水平是小白级别，请大家轻轻看。</p>
+        <p>这是我的第一篇英语读物翻译，目的是为了学英语+学技术的，翻译水平是小白级别，请大家轻轻看。</p>
 <p>##<a href="https://www.smashingmagazine.com/2018/02/generated-content-grid-layout/?utm_source=CSS-Weekly&amp;utm_campaign=Issue-304&amp;utm_medium=email#why-can-t-we-style-empty-areas-already" target="_blank" rel="noopener">Styling Empty Cells With Generated Content And CSS Grid Layout</a></p>
 <p>##通过生成内容和css的grid布局来设计空的单元格</p>
 <p>###A common Grid</p>
@@ -264,149 +258,63 @@
 <p>To change this, you need to give this element a lower z-index property than everything else. If nothing else has a z-index value, the simplest thing to do is to give your generated content a z-index of -1. This will cause it to be the first thing in the stack, as the item with the lowest z-index.<br>要改变这一点，你需要给这个元素比其他一切下z-index属性。如果没有一个z-index值，最简单的办法就是把你的内容生成属性- 1。这将导致堆栈中的第一个东西，作为项的最低z-index。<br><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.grid</span><span class="selector-pseudo">::after</span> &#123;</span><br><span class="line">    <span class="attribute">z-index</span>: -<span class="number">1</span>;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">""</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="built_in">rgba</span>(214,232,182,.3);</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">5px</span> solid <span class="built_in">rgb</span>(214,232,182);</span><br><span class="line">    <span class="attribute">grid-column</span>: <span class="number">2</span> / <span class="number">5</span>;</span><br><span class="line">    <span class="attribute">grid-row</span>: <span class="number">1</span> / <span class="number">4</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>Adding backgrounds in this way doesn’t need to be limited to dropping a background completely behind your content. Being able to pop blocks of color behind part of your design could create some interesting effects.<br>以这种方式添加背景不需要仅限于在内容后面完全丢弃背景。能够在设计的后面弹出颜色块可以产生一些有趣的效果。</p>
 
-        
       
     </div>
 
     
-
-    
-
-  </article>
-
-    
       
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2018/03/08/react-native/">react-native 总结</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2018-03-08
-        </span>
-        
-        
-      </div>
-    </header>
-
-    
-    
-
-    <div class="post-content">
       
-        
-        
 
-        
-          <p>##template<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&apos;use strict&apos;;</span><br><span class="line"></span><br><span class="line">import React,&#123; Component &#125; from &apos;react&apos;;</span><br><span class="line">import &#123; StyleSheet,Text,View &#125; from &apos;react-native&apos;;//react-native的标签组件以及样式</span><br><span class="line">import //额外的组件</span><br><span class="line"></span><br><span class="line">export default class extends Component&#123;</span><br><span class="line">  constructor()&#123; //构造函数，在创建组件时调用一次</span><br><span class="line">      super();</span><br><span class="line">      this.state=&#123;</span><br><span class="line">        //初始化组件属性</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  componentWillMount()&#123;</span><br><span class="line">    //在组件加载之前调用一次。如果在这个函数里面调用setState，本次的render函数可以看到更新后的state，并且只渲染一次。</span><br><span class="line">  &#125;</span><br><span class="line">  componentDidMount()&#123;</span><br><span class="line">    //在组件加载之后调用一次。</span><br><span class="line">  &#125;</span><br><span class="line">  componentWillReceiveProps(nextProps)&#123;</span><br><span class="line">    //props是父组件传递给子组件的。父组件发生render的时候子组件就会调用componentWillReceiveProps（不管props有没有更新，也不管父子组件之间有没有数据交换）。</span><br><span class="line">  &#125;</span><br><span class="line">  shouldComponentUpdate()&#123;</span><br><span class="line">    //组件加载之后，每次调用setState后都会调用shouldComponentUpdate判断是否需要重新渲染组件。默认返回true，需要重新render。在比较复杂的应用里，有一些数据的改变并不影响界面展示，可以在这里做判断，优化渲染效率。</span><br><span class="line">  &#125;</span><br><span class="line">  componentWillUpdate()&#123;</span><br><span class="line">    //shouldComponentUpdate返回true或者调用forceUpdate之后，componentWillUpdate会被调用。 </span><br><span class="line">  &#125;</span><br><span class="line">  componentDidUpdate()&#123;</span><br><span class="line">    //除了首次render之后调用componentDidMount，其它render结束之后都是调用componentDidUpdate。</span><br><span class="line">  &#125;</span><br><span class="line">  render() &#123;</span><br><span class="line">    return(</span><br><span class="line">      &lt;View&gt;&lt;/View&gt;</span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line">  componentWillUnmount()&#123;</span><br><span class="line">    //组件被卸载时调用。一般在componentDidMount里面注册的事件需要在这里删除。</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const styles = StyleSheet.create(&#123; //样式以驼峰式写法定义</span><br><span class="line"></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
-<p>##生命周期<br><img src="http://upload-images.jianshu.io/upload_images/1814354-4bf62e54553a32b7.png?imageMogr2/auto-orient/strip%7CimageView2/2" alt="react-生命周期"></p>
-<p>##常用外部组件</p>
-<blockquote>
-<ul>
-<li>icon - react-native-vector-icons </li>
-<li>swiper - react-native-swiper</li>
-<li>camera - react-native-camera</li>
-<li>navigation - react-navigation</li>
-</ul>
-</blockquote>
-<p>##快速创建</p>
-<blockquote>
-<ul>
-<li>react-native-cli</li>
-<li>create-react-native-app </li>
-</ul>
-</blockquote>
-<p>##环境配置参照 </p>
-<blockquote>
-<ul>
-<li><a href="http://facebook.github.io/react-native/docs/getting-started.html" target="_blank" rel="noopener">react-native快速开始 - 可使用expo(app)扫描查看项目</a></li>
-<li><a href="http://reactnative.cn/docs/0.50/getting-started.html" target="_blank" rel="noopener">react-native开始 - 需搭建app开发环境以及虚拟机</a></li>
-</ul>
-</blockquote>
-<p>##常用react-native组件</p>
-<ul>
-<li><code>&lt;View&gt;</code>视图组件<code>&lt;/View&gt;</code></li>
-<li><code>&lt;Text&gt;</code>文字组件<code>&lt;/Text&gt;</code></li>
-<li><code>&lt;Button&gt;</code>按钮组件<code>&lt;/Button&gt;</code></li>
-<li><code>&lt;TextInput /&gt;</code>输入框组件</li>
-</ul>
-<p>##github上比较好的demo学习<br><a href="https://github.com/fangwei716/30-days-of-react-native" target="_blank" rel="noopener">30-days-of-react-native</a></p>
-<p>##学习文档<br>详见<a href="https://reactnative.cn/docs/0.51/getting-started.html" target="_blank" rel="noopener">react-native</a>官网。</p>
-
-        
+  <div class="post-copyright">
+    <p class="copyright-item">
+      <span>原文作者: </span>
+      <a href="http://BlackBirch.github.io">black birch</a>
+    </p>
+    <p class="copyright-item">
+      <span>原文链接: </span>
+      <a href="http://BlackBirch.github.io/2018/03/29/translation-0/">http://BlackBirch.github.io/2018/03/29/translation-0/</a>
+    </p>
+    <p class="copyright-item">
+      <span>许可协议: </span>
       
-    </div>
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
 
-    
 
-    
 
-  </article>
-
-    
       
-  <article class="post">
-    <header class="post-header">
-      <h1 class="post-title">
-        
-          <a class="post-link" href="/2018/02/27/hello-world/">前端 - 三分钟热度的我，三年后从零出发</a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <span class="post-time">
-          2018-02-27
-        </span>
-        
-        
-      </div>
-    </header>
-
-    
-    
-
-    <div class="post-content">
       
-        
-        
-
-        
-          <p>接触网站开发也有四个年头了，<br>而接触前端也有3年了，<br>从基础的学习到项目的实战经验，<br>我发现了一个重大的问题，<br>写过的代码都不记得是自己写的 T T，<br>所以决定了重新开通博客，<br>把以前的现在将来的学到的用到的都记录在这里~ </p>
-<p>怎么搭建博客吗？<br>参考 <a href="http://ibruce.info/2013/11/22/hexo-your-blog/" target="_blank" rel="noopener">http://ibruce.info/2013/11/22/hexo-your-blog/</a></p>
-<p>怎么写技术博客呢？</p>
-<ol>
-<li>实战类：<br> 写作思路 背景-&gt;排查-&gt;解决-&gt;防止<br> 首先描述问题背景，what？where？<br> 排查过程 why？ because<br> 解决 how？<br> 防止 avoid</li>
-<li>入门类：<br> 写作思路 技术背景-&gt;基础环境-&gt;demo</li>
-<li>小结：<br> 概括文章概要（设计）-&gt; 根据概要写文章（编码） -&gt; 检查文章错别字、条例（猜测）-&gt; 调节文章结构（重构）-&gt; 发布文章（上线or投产）</li>
-</ol>
-<p>就酱紫~ keep going！    </p>
-
-        
-      
-    </div>
-
     
 
     
-
-  </article>
-
+      <footer class="post-footer">
+        
+        
+        
+  <nav class="post-nav">
     
-  </section>
-
-  
-  <nav class="pagination">
     
+      <a class="next" href="/2018/03/08/react-native/">
+        <span class="next-text nav-default">react-native 总结</span>
+        <span class="prev-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
     
   </nav>
+
+      </footer>
+    
+
+  </article>
 
 
           </div>
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
       </main>
@@ -495,6 +403,11 @@
     </div>
 
     
+  
+  
+
+  
+
 
 
     
