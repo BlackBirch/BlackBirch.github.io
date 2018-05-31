@@ -177,6 +177,67 @@
     <header class="post-header">
       <h1 class="post-title">
         
+          <a class="post-link" href="/2018/05/31/18-5-31/">mpvue踩坑记</a>
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2018-05-31
+        </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+
+    <div class="post-content">
+      
+        
+        
+
+        
+          <h2 id="首先mpvue是什么"><a href="#首先mpvue是什么" class="headerlink" title="首先mpvue是什么"></a>首先mpvue是什么</h2><ul>
+<li>在我理解就是，用vue写小程序 详见文档(<a href="http://mpvue.com/" target="_blank" rel="noopener">http://mpvue.com/</a>)</li>
+</ul>
+<ol>
+<li><p>关于表单提交问题, 文档有建议说用v-model的话会有光标重定位问题，所以最好加上.lazy，其实加上.lazy后还有个问题，就是数据绑定是在光标移开后进行，会导致输入完input框直接点击按钮提交，数据不更新为null，因为表单在使用v-model.lazy会使用change事件，而mpvue会将input和textarea中的change事件转为blur事件。 所以个人建议使用input事件，监听每次input输入来绑定数据。</p>
+</li>
+<li><p>关于mpvue的样式问题<br>嗯… 暂时没看到有太多的开源样式，除了自己重写，还可以考虑下<a href="https://github.com/KuangPF/mpvue-weui" target="_blank" rel="noopener">mpvue-weui</a>自己暂时用的就是这个。</p>
+</li>
+<li><p>貌似mpvue不支持vue常用的axios请求，建议用<a href="https://github.com/wendux/fly" target="_blank" rel="noopener">fly</a>可以在多端上实现代码的复用，目前已支持的有 <code>Node.js</code> 、<code>微信小程序</code> 、<code>Weex</code> 、<code>React Native</code> 、<code>Quick App</code>。</p>
+</li>
+</ol>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install flyio</span><br></pre></td></tr></table></figure>
+<h3 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> Fly <span class="keyword">from</span> <span class="string">'flyio'</span></span><br></pre></td></tr></table></figure>
+<ol>
+<li><p>vue带参数跳转链接后，链接的接收的参数是在this.$route.query这里获取，而mpvue的参数是在this.$root.$mp.query这里获取。文档提到了，只是小字部分。</p>
+</li>
+<li><p>样式问题，wx有个尺寸单位样式rpx，wx官网建议用。这里不多说。</p>
+</li>
+<li><p>生命周期问题，和wx相关的原函数[类似这个wx.login()最好写在onLoad或者onShow()里]还是写在wx带的生命周期函数里，因为用mpvue的生命周期无法使用。</p>
+</li>
+</ol>
+<p>开发完下来给我的印象就是要仔细浏览文档的小字部分，或许坑你好几个小时的就在那里，如果不是说特别熟练vue的还是老老实实看微信小程序开发的文档比较好，嗯，就酱，最重要的一句“看文档，看文档，看文档。”</p>
+
+        
+      
+    </div>
+
+    
+
+    
+
+  </article>
+
+    
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
           <a class="post-link" href="/2018/03/29/translation-0/">web英语读物[个人翻译] - 00</a>
         
       </h1>
