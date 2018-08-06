@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+
+  <meta name="description" content="微信公众号支付&H5调起微信支付（VUE）"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/default" title="否极.泰来">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/bitbug_favicon.ico?v=2.6.0" />
+
+
+
+<link rel="canonical" href="http://BlackBirch.github.io/2018/08/06/weixin-pay/"/>
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.6.0" />
+
+
+
+
+
+
+  
+
+
+
+  <script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+
+
+
+
+    <title> 微信公众号支付&H5调起微信支付（VUE） - 否极.泰来 </title>
+  </head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">否极.泰来</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/">
+        <li class="mobile-menu-item">
+          
+          
+            首页
+          
+        </li>
+      </a>
+    
+      <a href="/archives/">
+        <li class="mobile-menu-item">
+          
+          
+            归档
+          
+        </li>
+      </a>
+    
+      <a href="/categories">
+        <li class="mobile-menu-item">
+          
+          
+            分类
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">否极.泰来</a>
+</div>
+
+<nav class="site-navbar">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/">
+            
+            
+              首页
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            
+            
+              归档
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/categories">
+            
+            
+              分类
+            
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          微信公众号支付&H5调起微信支付（VUE）
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2018-08-06
+        </span>
+        
+          <div class="post-category">
+            
+              <a href="/categories/js/">js</a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#第一步-开通权限以及准备工作"><span class="toc-text">第一步 开通权限以及准备工作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第二步-码代码"><span class="toc-text">第二步 码代码</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#微信内H5调起支付（公众号支付）"><span class="toc-text">微信内H5调起支付（公众号支付）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#微信外H5支付"><span class="toc-text">微信外H5支付</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#the-end"><span class="toc-text">the end.</span></a></li></ol>
+    </div>
+  </div>
+
+
+    <div class="post-content">
+      
+        <p>最近在忙一个项目，里面要用到微信支付。</p>
+<h2 id="第一步-开通权限以及准备工作"><a href="#第一步-开通权限以及准备工作" class="headerlink" title="第一步 开通权限以及准备工作"></a>第一步 开通权限以及准备工作</h2><p>简单说下好了：<br>首先申请微信服务号，还要通过公众号后台将微信支付也开启了，申请个关联的商户号。后面的支付要分两种情况，因为在微信内只能用公众号支付，不能用H5支付。</p>
+<p><a href="https://mp.weixin.qq.com" target="_blank" rel="noopener">申请微信服务号网址</a><br><a href="https://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1445241432" target="_blank" rel="noopener">微信公众号文档</a></p>
+<hr>
+<p>1.微信内支付：申请公众号支付<br>根据文档来折腾各种域名配置[js-sdk使用域名、微信授权域名、调用微信下单的域名]，由于是公众号支付接入是H5,所以需要微信JS-SDK来开发的。</p>
+<p><a href="https://pay.weixin.qq.com/wiki/doc/api/jsapi.php?chapter=7_7&amp;index=6" target="_blank" rel="noopener">微信内H5支付文档</a><br>VUE可用微信JS-SDK：<br>    <a href="https://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1421141115" target="_blank" rel="noopener">JS-SDK 说明文档</a><br>    <a href="https://www.npmjs.com/package/weixin-js-sdk" target="_blank" rel="noopener">npm安装VUE使用的JS-SDK地址</a></p>
+<hr>
+<p>2.微信外支付：H5支付<br>用之前通过服务号关联的商户号申请H5支付“题外话，这里申请折腾了好久，因为产品描述和网站页面内容都要相符和…然后弄了快10天了吧才申请到了”<br><a href="https://pay.weixin.qq.com/wiki/doc/api/H5.php?chapter=15_1" target="_blank" rel="noopener">相关文档</a></p>
+<p>具体的业务流程见文档啦~ 这里不详细说。</p>
+<hr>
+<h2 id="第二步-码代码"><a href="#第二步-码代码" class="headerlink" title="第二步 码代码"></a>第二步 码代码</h2><p>首先要区分浏览器环境是在微信内还是微信外啦，要用到UA，貌似UA可以改动的，=。 = 算了，还是继续用吧，直接放代码好了，不多说了</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isWeixin</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> navigator.userAgent.toLowerCase().indexOf(<span class="string">'micromessenger'</span>) !== <span class="number">-1</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然后就要分开说微信内“公众号”支付和微信外“H5”支付</p>
+<hr>
+<h3 id="微信内H5调起支付（公众号支付）"><a href="#微信内H5调起支付（公众号支付）" class="headerlink" title="微信内H5调起支付（公众号支付）"></a>微信内H5调起支付（公众号支付）</h3><p>WeixinJSBridge这个我没有用到，我还是用微信jsdk里面的wx.chooseWXPay()。毕竟WeixinJSBridge是微信浏览器的内置对象，开发时还是用wx.chooseWXPay()不容易报错，在使用web开发者工具时在wx.chooseWXPay()里返回函数中打印字段，发现微信jsdk最终是调用了WeixinJSBridge对象的，所以微信用应该是用了同一套支付逻辑。</p>
+<p>1.下订单 - 需要后端开一个下单接口</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">payOrder () &#123;</span><br><span class="line">  <span class="keyword">const</span> reqbody = &#123;</span><br><span class="line">    userId: <span class="keyword">this</span>.userId, <span class="comment">// 用户id</span></span><br><span class="line">    body: <span class="string">''</span>,    <span class="comment">// 商品内容</span></span><br><span class="line">    totalFee: <span class="number">10</span>,  <span class="comment">// 总价格</span></span><br><span class="line">    detail: [], <span class="comment">// 商品列表</span></span><br><span class="line">    payChannel: <span class="string">'WXPAY'</span>, <span class="comment">// 微信支付的标识</span></span><br><span class="line">    tradeType: <span class="string">''</span> <span class="comment">// 'JSAPI' or 'MWEB' 支付环境，微信内调用jsdk的填写 'JSAPI', 微信外调用H5支付的填写 'MWEB' </span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">this</span>.$http.post(<span class="string">'/client/pay/unifiedorder'</span>, querystring.stringify(&#123;   <span class="comment">// http请求用的是axios</span></span><br><span class="line">    channelFlow: channelFlow(),</span><br><span class="line">    reqbody: <span class="built_in">JSON</span>.stringify(reqbody)</span><br><span class="line">  &#125;)).then(<span class="function">(<span class="params">res</span>) =&gt;</span> &#123;&#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>后端可以返回后续需要的字段</p>
+<p>2.就是调微信接口啦，先引入之前安装好的weixin-js-sdk</p>
+<p>main.js<br><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">var</span> wx = <span class="built_in">require</span>(<span class="string">'weixin-js-sdk'</span>)</span><br><span class="line">Vue.prototype.wx = wx</span><br></pre></td></tr></table></figure></p>
+<p>pay.vue<br><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">this</span>.wx.chooseWXPay(&#123;</span><br><span class="line">  timestamp: <span class="number">0</span>, <span class="comment">// 支付签名时间戳，注意微信jssdk中的所有使用timestamp字段均为小写。但最新版的支付后台生成签名使用的timeStamp字段名需大写其中的S字符</span></span><br><span class="line">  nonceStr: <span class="string">''</span>, <span class="comment">// 支付签名随机串，不长于 32 位</span></span><br><span class="line">  package: <span class="string">''</span>, <span class="comment">// 统一支付接口返回的prepay_id参数值，提交格式如：prepay_id=\*\*\*）</span></span><br><span class="line">  signType: <span class="string">''</span>, <span class="comment">// 签名方式，默认为'SHA1'，使用新版支付需传入'MD5'</span></span><br><span class="line">  paySign: <span class="string">''</span>, <span class="comment">// 支付签名</span></span><br><span class="line">  success: <span class="function"><span class="keyword">function</span> (<span class="params">res</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 支付成功后的回调函数</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<hr>
+<h3 id="微信外H5支付"><a href="#微信外H5支付" class="headerlink" title="微信外H5支付"></a>微信外H5支付</h3><p>首先和微信内的一样需要下单，后续 // todo</p>
+<p>1.下订单 - 需要后端开一个下单接口</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">payOrder () &#123;</span><br><span class="line">  <span class="keyword">const</span> reqbody = &#123;</span><br><span class="line">    userId: <span class="keyword">this</span>.userId, <span class="comment">// 用户id</span></span><br><span class="line">    body: <span class="string">''</span>,    <span class="comment">// 商品内容</span></span><br><span class="line">    totalFee: <span class="number">10</span>,  <span class="comment">// 总价格</span></span><br><span class="line">    detail: [], <span class="comment">// 商品列表</span></span><br><span class="line">    payChannel: <span class="string">'WXPAY'</span>, <span class="comment">// 微信支付的标识</span></span><br><span class="line">    tradeType: <span class="string">''</span> <span class="comment">// 'JSAPI' or 'MWEB' 支付环境，微信内调用jsdk的填写 'JSAPI', 微信外调用H5支付的填写 'MWEB' </span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">this</span>.$http.post(<span class="string">'/client/pay/unifiedorder'</span>, querystring.stringify(&#123;   <span class="comment">// http请求用的是axios</span></span><br><span class="line">    channelFlow: channelFlow(),</span><br><span class="line">    reqbody: <span class="built_in">JSON</span>.stringify(reqbody)</span><br><span class="line">  &#125;)).then(<span class="function">(<span class="params">res</span>) =&gt;</span> &#123;&#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>2.跳微信支付</p>
+<p>通过步骤1会回调一个mwebUrl，可以在手机里拉起微信进行支付。在后面带上redirect_url字段在支付完成后就可以回到你指定的页面。<br>下单后拉起支付即可</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">let</span> redirectUrl = <span class="built_in">encodeURIComponent</span>(<span class="string">'https://www.xxx.com'</span>)</span><br><span class="line"><span class="keyword">let</span> url = res.data.resBody.mwebUrl + <span class="string">'&amp;redirect_url='</span> + redirectUrl</span><br><span class="line"><span class="built_in">window</span>.location.href = url</span><br></pre></td></tr></table></figure>
+<p>后续就是支付成功和支付失败的回调了。</p>
+<h2 id="the-end"><a href="#the-end" class="headerlink" title="the end."></a>the end.</h2>
+      
+    </div>
+
+    
+      
+      
+
+  <div class="post-copyright">
+    <p class="copyright-item">
+      <span>原文作者: </span>
+      <a href="http://BlackBirch.github.io">black birch</a>
+    </p>
+    <p class="copyright-item">
+      <span>原文链接: </span>
+      <a href="http://BlackBirch.github.io/2018/08/06/weixin-pay/">http://BlackBirch.github.io/2018/08/06/weixin-pay/</a>
+    </p>
+    <p class="copyright-item">
+      <span>许可协议: </span>
+      
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+
+
+
+      
+      
+    
+
+    
+      <footer class="post-footer">
+        
+        
+        
+  <nav class="post-nav">
+    
+    
+      <a class="next" href="/2018/05/31/18-5-31/">
+        <span class="next-text nav-default">mpvue踩坑记</span>
+        <span class="prev-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+      </footer>
+    
+
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+      </main>
+
+      <footer id="footer" class="footer">
+
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:linjiahua2@163.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://github.com/BlackBirch" class="iconfont icon-github" title="github"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+    
+      
+      <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    
+  </div>
+
+
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+    
+    2018
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">black birch</span>
+  </span>
+  <div>
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  本站总访问量 <span id="busuanzi_value_site_pv"></span> 次&nbsp&nbsp&nbsp
+  本站访客数<span id="busuanzi_value_site_uv"></span>人次
+  </div>
+</div>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+  
+  
+
+  
+
+
+
+    
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  
+
+  
+
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.6.0"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=2.6.0"></script>
+
+  </body>
+</html>
