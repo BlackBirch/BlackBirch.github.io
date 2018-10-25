@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+
+  <meta name="description" content="node版本更新[window10系统]"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/default" title="否极.泰来">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/bitbug_favicon.ico?v=2.6.0" />
+
+
+
+<link rel="canonical" href="http://BlackBirch.github.io/2018/10/25/update-node/"/>
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.6.0" />
+
+
+
+
+
+
+  
+
+
+
+  <script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+
+
+
+
+    <title> node版本更新[window10系统] - 否极.泰来 </title>
+  </head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">否极.泰来</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/">
+        <li class="mobile-menu-item">
+          
+          
+            首页
+          
+        </li>
+      </a>
+    
+      <a href="/archives/">
+        <li class="mobile-menu-item">
+          
+          
+            归档
+          
+        </li>
+      </a>
+    
+      <a href="/categories">
+        <li class="mobile-menu-item">
+          
+          
+            分类
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">否极.泰来</a>
+</div>
+
+<nav class="site-navbar">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/">
+            
+            
+              首页
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            
+            
+              归档
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/categories">
+            
+            
+              分类
+            
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          node版本更新[window10系统]
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2018-10-25
+        </span>
+        
+          <div class="post-category">
+            
+              <a href="/categories/js/">js</a>
+            
+          </div>
+        
+        
+      </div>
+    </header>
+
+    
+    
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#方法："><span class="toc-text">方法：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-node官网https-nodejs-org-zh-cn"><span class="toc-text">1.node官网https://nodejs.org/zh-cn/</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-找到之前node存放地址"><span class="toc-text">2.找到之前node存放地址</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-将下载好的最新版的node安装到上一步存放的地址里。"><span class="toc-text">3. 将下载好的最新版的node安装到上一步存放的地址里。</span></a></li></ol></li></ol>
+    </div>
+  </div>
+
+
+    <div class="post-content">
+      
+        <p>前提：<br>vue-cli更新到3.0以上了，官网文档也更新，为了试试最新的vue-cli，将其更新了，但我的node版本还是v8.7.0的，有点尴尬，更新了vue-cli还是用不了，于是去找度娘了，发现基本都是命令行更新的。</p>
+<p>如下：<br>1·安装n插件<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install -g n --force</span><br><span class="line">---------&gt;</span><br><span class="line">npm WARN using --force I sure hope you know what you are doing.</span><br><span class="line">C:\Users\cc\AppData\Roaming\npm\n -&gt; C:\Users\cc\AppData\Roaming\npm\node_modules\n\bin\n</span><br><span class="line">+ n@2.1.8</span><br><span class="line">added 1 package in 0.359s</span><br></pre></td></tr></table></figure></p>
+<p>2·升级至在最新版本<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">n stable</span><br><span class="line">------&gt;</span><br><span class="line">install : node-v9.0.0</span><br></pre></td></tr></table></figure></p>
+<p>3·升级至指定版本<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">n v9.0.0</span><br><span class="line">-------&gt;</span><br><span class="line">install : node-v9.0.0</span><br></pre></td></tr></table></figure></p>
+<p>可是我在tap 2 就失败了，一直报错<br>‘bash’ 不是内部或外部命令，也不是可运行的程序</p>
+<p>感觉应该是指令高级设置那边目录不对还是怎么了不清楚了，折腾了好久，算了，做人要能屈能伸。<br>所以被逼无奈去node官网重新下最新的安装包orz </p>
+<hr>
+<h3 id="方法："><a href="#方法：" class="headerlink" title="方法："></a>方法：</h3><h4 id="1-node官网https-nodejs-org-zh-cn"><a href="#1-node官网https-nodejs-org-zh-cn" class="headerlink" title="1.node官网https://nodejs.org/zh-cn/"></a>1.node官网<a href="https://nodejs.org/zh-cn/" target="_blank" rel="noopener">https://nodejs.org/zh-cn/</a></h4><p>找到你的版本msi</p>
+<h4 id="2-找到之前node存放地址"><a href="#2-找到之前node存放地址" class="headerlink" title="2.找到之前node存放地址"></a>2.找到之前node存放地址</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&gt; where node</span><br><span class="line">C:\Program Files\nodejs\node.exe</span><br></pre></td></tr></table></figure>
+<h4 id="3-将下载好的最新版的node安装到上一步存放的地址里。"><a href="#3-将下载好的最新版的node安装到上一步存放的地址里。" class="headerlink" title="3. 将下载好的最新版的node安装到上一步存放的地址里。"></a>3. 将下载好的最新版的node安装到上一步存放的地址里。</h4><p>搞定啦~ 查看下node版本<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&gt; node -v</span><br><span class="line">v8.12.0</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+    
+      
+      
+
+  <div class="post-copyright">
+    <p class="copyright-item">
+      <span>原文作者: </span>
+      <a href="http://BlackBirch.github.io">black birch</a>
+    </p>
+    <p class="copyright-item">
+      <span>原文链接: </span>
+      <a href="http://BlackBirch.github.io/2018/10/25/update-node/">http://BlackBirch.github.io/2018/10/25/update-node/</a>
+    </p>
+    <p class="copyright-item">
+      <span>许可协议: </span>
+      
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+
+
+
+      
+      
+    
+
+    
+      <footer class="post-footer">
+        
+        
+        
+  <nav class="post-nav">
+    
+    
+      <a class="next" href="/2018/08/06/weixin-pay/">
+        <span class="next-text nav-default">微信公众号支付&H5调起微信支付（VUE）</span>
+        <span class="prev-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+      </footer>
+    
+
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+      </main>
+
+      <footer id="footer" class="footer">
+
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:linjiahua2@163.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://github.com/BlackBirch" class="iconfont icon-github" title="github"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+    
+      
+      <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    
+  </div>
+
+
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+    
+    2018
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">black birch</span>
+  </span>
+  <div>
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  本站总访问量 <span id="busuanzi_value_site_pv"></span> 次&nbsp&nbsp&nbsp
+  本站访客数<span id="busuanzi_value_site_uv"></span>人次
+  </div>
+</div>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+  
+  
+
+  
+
+
+
+    
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery-3.1.1.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  
+
+  
+
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.6.0"></script>
+<script type="text/javascript" src="/js/src/bootstrap.js?v=2.6.0"></script>
+
+  </body>
+</html>
